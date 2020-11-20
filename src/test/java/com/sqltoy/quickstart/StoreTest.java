@@ -3,6 +3,7 @@
  */
 package com.sqltoy.quickstart;
 
+import com.sqltoy.quickstart.service.OrganInfoService;
 import java.util.List;
 
 import org.junit.jupiter.api.Test;
@@ -30,6 +31,8 @@ public class StoreTest {
 	SqlToyLazyDao sqlToyLazyDao;
 	@Autowired
 	StaffInfoService staffInfoService;
+	@Autowired
+	OrganInfoService organInfoService;
 
 	// 注意要先创建存储过程
 //	CREATE PROCEDURE sp_showcase(IN userId int,IN endDate datetime )

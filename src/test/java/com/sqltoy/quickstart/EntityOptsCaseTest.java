@@ -3,6 +3,7 @@
  */
 package com.sqltoy.quickstart;
 
+import com.sqltoy.quickstart.service.InitDBService;
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
@@ -38,7 +39,8 @@ public class EntityOptsCaseTest {
 
 	@Autowired
 	StaffInfoService staffInfoService;
-
+	@Autowired
+	private InitDBService initDBService;
 	// 通过POJO的查询where和select 部分可以直接写字段名称和也可以写POJO字段的属性名称,也可以混合
 	// 原理就是sqltoy会将字段属性名替换成对应的数据库字段名称
 

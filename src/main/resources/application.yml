@@ -1,3 +1,4 @@
+
 spring:
     #将sqltoy 放于开始位置，避免很多开发者忽视了spring.sqltoy 开头，变成了sqltoy开头导致无法加载
     sqltoy:
@@ -27,11 +28,11 @@ spring:
        name: dataSource
        type: com.alibaba.druid.pool.DruidDataSource
        driver-class-name: com.mysql.cj.jdbc.Driver
-       username: quickstart
-       password: quickstart
+       username: root
+       password: test1234
        defaultAutoCommit: false
        # 注意characterEncoding=utf-8 参数,在mysql6~7 版本下不设置like 中文时会无法匹配
-       url: jdbc:mysql://192.168.56.109:3306/quickstart?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=false&allowPublicKeyRetrieval=true
+       url: jdbc:mysql://www.tcpax.com:8190/quickstart?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=false
        druid:
          initial-size: 5
          min-idle: 5
@@ -50,4 +51,5 @@ spring:
          testOnReturn: false
          removeAbandoned: true
          removeAbandonedTimeout: 300
-    
+server:
+  port: 8001

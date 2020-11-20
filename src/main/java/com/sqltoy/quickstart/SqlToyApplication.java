@@ -14,7 +14,7 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
  * @modify 2020年7月17日,修改说明
  */
 @SpringBootApplication
-@ComponentScan(basePackages = { "com.sqltoy.config", "com.sqltoy.quickstart" })
+@ComponentScan(basePackages = {  "com.sqltoy","com.sqltoy.config", "com.sqltoy.quickstart" })
 @EnableTransactionManagement
 public class SqlToyApplication {
 	/**

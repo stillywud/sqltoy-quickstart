@@ -8,7 +8,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.sagacity.sqltoy.callback.SelectFields;
 import org.sagacity.sqltoy.config.annotation.Column;
 import org.sagacity.sqltoy.config.annotation.Entity;
@@ -17,9 +16,9 @@ import org.sagacity.sqltoy.config.annotation.Id;
 /**
  * @project sqltoy-quickstart
  * @version 1.0.0
- * Table: sqltoy_staff_info,Remark:员工信息表  
+ * Table: SQLTOY_STAFF_INFO,Remark:员工信息表  
  */
-@Entity(tableName="sqltoy_staff_info",pk_constraint="PRIMARY")
+@Entity(tableName = "SQLTOY_STAFF_INFO", pk_constraint = "PRIMARY")
 public abstract class AbstractStaffInfoVO implements Serializable {
 	
 	/**

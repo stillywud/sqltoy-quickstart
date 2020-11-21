@@ -7,7 +7,6 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.sagacity.sqltoy.callback.SelectFields;
 import org.sagacity.sqltoy.config.annotation.Column;
 import org.sagacity.sqltoy.config.annotation.Entity;
@@ -16,9 +15,9 @@ import org.sagacity.sqltoy.config.annotation.Id;
 /**
  * @project sqltoy-quickstart
  * @version 1.0.0
- * Table: sqltoy_fruit_order,Remark:查询汇总演示-水果订单表  
+ * Table: SQLTOY_FRUIT_ORDER,Remark:查询汇总演示-水果订单表  
  */
-@Entity(tableName="sqltoy_fruit_order",pk_constraint="PRIMARY")
+@Entity(tableName = "SQLTOY_FRUIT_ORDER", pk_constraint = "PRIMARY")
 public abstract class AbstractFruitOrderVO implements Serializable {
 	
 	/**

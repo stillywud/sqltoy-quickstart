@@ -9,7 +9,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.sagacity.sqltoy.callback.SelectFields;
 import org.sagacity.sqltoy.config.annotation.Column;
 import org.sagacity.sqltoy.config.annotation.Entity;
@@ -18,9 +17,9 @@ import org.sagacity.sqltoy.config.annotation.Id;
 /**
  * @project sqltoy-quickstart
  * @version 1.0.0
- * Table: sqltoy_device_order,Remark:硬件购销定单表(演示有规则单号)  
+ * Table: SQLTOY_DEVICE_ORDER,Remark:硬件购销定单表(演示有规则单号)  
  */
-@Entity(tableName="sqltoy_device_order",pk_constraint="PRIMARY")
+@Entity(tableName = "SQLTOY_DEVICE_ORDER", pk_constraint = "PRIMARY")
 public abstract class AbstractDeviceOrderVO implements Serializable {
 	
 	/**

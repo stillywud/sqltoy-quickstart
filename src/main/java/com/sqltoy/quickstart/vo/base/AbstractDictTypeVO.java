@@ -3,25 +3,23 @@
  */
 package com.sqltoy.quickstart.vo.base;
 
+import com.sqltoy.quickstart.vo.DictDetailVO;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.sagacity.sqltoy.callback.SelectFields;
 import org.sagacity.sqltoy.config.annotation.Column;
 import org.sagacity.sqltoy.config.annotation.Entity;
 import org.sagacity.sqltoy.config.annotation.Id;
 import org.sagacity.sqltoy.config.annotation.OneToMany;
 
-import com.sqltoy.quickstart.vo.DictDetailVO;
-
 /**
  * @project sqltoy-quickstart
  * @version 1.0.0
- * Table: sqltoy_dict_type,Remark:字典分类表  
+ * Table: SQLTOY_DICT_TYPE,Remark:字典分类表  
  */
-@Entity(tableName="sqltoy_dict_type",pk_constraint="PRIMARY")
+@Entity(tableName = "SQLTOY_DICT_TYPE", pk_constraint = "PRIMARY")
 public abstract class AbstractDictTypeVO implements Serializable {
 	
 	/**
@@ -33,7 +31,7 @@ public abstract class AbstractDictTypeVO implements Serializable {
 	 * jdbcType:VARCHAR
 	 * 字典类型代码
 	 */
-	@Id(strategy="generator",generator="org.sagacity.sqltoy.plugins.id.DefaultIdGenerator")
+  @Id(strategy = "generator", generator = "org.sagacity.sqltoy.plugins.id.NanoTimeIdGenerator")
 	@Column(name="DICT_TYPE",length=50L,type=java.sql.Types.VARCHAR,nullable=false)
 	protected String dictType;
 	
@@ -97,7 +95,8 @@ public abstract class AbstractDictTypeVO implements Serializable {
 	/**
 	 * 主键关联子表信息
 	 */
-	@OneToMany(fields={"dictType"},mappedTable="sqltoy_dict_detail",mappedColumns={"DICT_TYPE"},mappedFields={"dictType"})
+  @OneToMany(fields = {"dictType"}, mappedTable = "SQLTOY_DICT_DETAIL", mappedColumns = {
+      "DICT_TYPE"}, mappedFields = {"dictType"})
 	protected List<DictDetailVO> dictDetailVOs=new ArrayList<DictDetailVO>();
 
 	/** default constructor */

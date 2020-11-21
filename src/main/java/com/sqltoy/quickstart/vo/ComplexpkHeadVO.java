@@ -3,12 +3,10 @@
  */
 package com.sqltoy.quickstart.vo;
 
+import com.sqltoy.quickstart.vo.base.AbstractComplexpkHeadVO;
 import java.time.LocalDate;
 import java.util.List;
-
 import org.sagacity.sqltoy.config.annotation.SqlToyEntity;
-
-import com.sqltoy.quickstart.vo.base.AbstractComplexpkHeadVO;
 
 /**
  * @project sqltoy-quickstart
@@ -36,7 +34,7 @@ public class ComplexpkHeadVO extends AbstractComplexpkHeadVO {
 	}
 
     /**
-	 * mapping sqltoy_complexpk_item data to sqltoy_complexpk_head oneToMany List
+     * mapping SQLTOY_COMPLEXPK_ITEM data to SQLTOY_COMPLEXPK_HEAD oneToMany List
 	 */
 	public void mappingComplexpkItemVOs(List<ComplexpkHeadVO> mainSet,List<ComplexpkItemVO> itemSet)
     {

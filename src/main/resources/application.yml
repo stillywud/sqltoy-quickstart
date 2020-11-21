@@ -13,7 +13,7 @@ spring:
         # 如果是单一类型数据库填写有利于减少一些判断(即排除类似于:mysql\oracle多种类型混用场景)
         #dialect: mysql
         # 设置默认使用的datasource(可选配置)
-        #defaultDataSource: dataSource
+        defaultDataSource: dataSource
         # 设置获取数据源的策略实现类,只在多数据源场景下需要设置,DefaultObtainDataSource是默认实现
         #obtainDataSource: org.sagacity.sqltoy.plugins.datasource.impl.DefaultObtainDataSource
         # 提供统一字段:createBy createTime updateBy updateTime 等字段补漏性(为空时)赋值(可选配置)
@@ -51,5 +51,32 @@ spring:
          testOnReturn: false
          removeAbandoned: true
          removeAbandonedTimeout: 300
+    datasource1:
+      name: dataSource1
+      type: com.alibaba.druid.pool.DruidDataSource
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      username: root
+      password: test1234
+      defaultAutoCommit: false
+      # 注意characterEncoding=utf-8 参数,在mysql6~7 版本下不设置like 中文时会无法匹配
+      url: jdbc:mysql://www.tcpax.com:8190/manager?useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8&useSSL=false
+      druid:
+        initial-size: 5
+        min-idle: 5
+        maxActive: 20
+        # 配置获取连接等待超时的时间
+        maxWait: 60000
+        numTestsPerEvictionRun: 3
+        keepAlive: true
+        # 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+        timeBetweenEvictionRunsMillis: 120000
+        # 配置一个连接在池中最小生存的时间，单位是毫秒
+        minEvictableIdleTimeMillis: 600000
+        validationQuery: SELECT 1 FROM DUAL
+        testWhileIdle: true
+        testOnBorrow: true
+        testOnReturn: false
+        removeAbandoned: true
+        removeAbandonedTimeout: 300
 server:
   port: 8001

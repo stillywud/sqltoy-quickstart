@@ -9,7 +9,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.sagacity.sqltoy.callback.SelectFields;
 import org.sagacity.sqltoy.config.annotation.Column;
 import org.sagacity.sqltoy.config.annotation.Entity;
@@ -18,9 +17,9 @@ import org.sagacity.sqltoy.config.annotation.Id;
 /**
  * @project sqltoy-quickstart
  * @version 1.0.0
- * Table: sqltoy_complexpk_item,Remark:复合主键级联操作子表  
+ * Table: SQLTOY_COMPLEXPK_ITEM,Remark:复合主键级联操作子表  
  */
-@Entity(tableName="sqltoy_complexpk_item",pk_constraint="PRIMARY")
+@Entity(tableName = "SQLTOY_COMPLEXPK_ITEM", pk_constraint = "PRIMARY")
 public abstract class AbstractComplexpkItemVO implements Serializable {
 	
 	/**
@@ -32,7 +31,7 @@ public abstract class AbstractComplexpkItemVO implements Serializable {
 	 * jdbcType:VARCHAR
 	 * ID
 	 */
-	@Id(strategy="generator",generator="org.sagacity.sqltoy.plugins.id.DefaultIdGenerator")
+  @Id(strategy = "generator", generator = "org.sagacity.sqltoy.plugins.id.NanoTimeIdGenerator")
 	@Column(name="ID",length=32L,type=java.sql.Types.VARCHAR,nullable=false)
 	protected String id;
 	

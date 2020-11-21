@@ -9,7 +9,6 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.sagacity.sqltoy.callback.SelectFields;
 import org.sagacity.sqltoy.config.annotation.Column;
 import org.sagacity.sqltoy.config.annotation.Entity;
@@ -18,9 +17,9 @@ import org.sagacity.sqltoy.config.annotation.Id;
 /**
  * @project sqltoy-quickstart
  * @version 1.0.0
- * Table: sqltoy_trans_info_15d,Remark:支付交易流水表(15天表)  
+ * Table: SQLTOY_TRANS_INFO_15D,Remark:支付交易流水表(15天表)  
  */
-@Entity(tableName="sqltoy_trans_info_15d",pk_constraint="PRIMARY")
+@Entity(tableName = "SQLTOY_TRANS_INFO_15D", pk_constraint = "PRIMARY")
 public abstract class AbstractTransInfo15dVO implements Serializable {
 	
 	/**
@@ -32,7 +31,7 @@ public abstract class AbstractTransInfo15dVO implements Serializable {
 	 * jdbcType:VARCHAR
 	 * 交易ID
 	 */
-	@Id(strategy="generator",generator="org.sagacity.sqltoy.plugins.id.DefaultIdGenerator")
+  @Id(strategy = "generator", generator = "org.sagacity.sqltoy.plugins.id.NanoTimeIdGenerator")
 	@Column(name="TRANS_ID",length=32L,type=java.sql.Types.VARCHAR,nullable=false)
 	protected String transId;
 	

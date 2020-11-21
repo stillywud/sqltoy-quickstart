@@ -7,7 +7,6 @@ import java.io.Serializable;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.sagacity.sqltoy.callback.SelectFields;
 import org.sagacity.sqltoy.config.annotation.Column;
 import org.sagacity.sqltoy.config.annotation.Entity;
@@ -16,9 +15,9 @@ import org.sagacity.sqltoy.config.annotation.Id;
 /**
  * @project sqltoy-quickstart
  * @version 1.0.0
- * Table: sqltoy_dict_detail,Remark:字典明细表  
+ * Table: SQLTOY_DICT_DETAIL,Remark:字典明细表  
  */
-@Entity(tableName="sqltoy_dict_detail",pk_constraint="PRIMARY")
+@Entity(tableName = "SQLTOY_DICT_DETAIL", pk_constraint = "PRIMARY")
 public abstract class AbstractDictDetailVO implements Serializable {
 	
 	/**

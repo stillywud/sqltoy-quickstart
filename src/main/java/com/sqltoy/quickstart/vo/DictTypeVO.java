@@ -3,11 +3,9 @@
  */
 package com.sqltoy.quickstart.vo;
 
-import java.util.List;
-
-import org.sagacity.sqltoy.config.annotation.SqlToyEntity;
-
 import com.sqltoy.quickstart.vo.base.AbstractDictTypeVO;
+import java.util.List;
+import org.sagacity.sqltoy.config.annotation.SqlToyEntity;
 
 /**
  * @project sqltoy-showcase
@@ -34,7 +32,7 @@ public class DictTypeVO extends AbstractDictTypeVO {
 	}
 
     /**
-	 * mapping sqltoy_dict_detail data to sqltoy_dict_type oneToMany List
+     * mapping SQLTOY_DICT_DETAIL data to SQLTOY_DICT_TYPE oneToMany List
 	 */
 	public void mappingDictDetailVOs(List<DictTypeVO> mainSet,List<DictDetailVO> itemSet)
     {

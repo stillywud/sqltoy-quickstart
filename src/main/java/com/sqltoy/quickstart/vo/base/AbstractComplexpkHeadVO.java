@@ -3,27 +3,25 @@
  */
 package com.sqltoy.quickstart.vo.base;
 
+import com.sqltoy.quickstart.vo.ComplexpkItemVO;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.sagacity.sqltoy.callback.SelectFields;
 import org.sagacity.sqltoy.config.annotation.Column;
 import org.sagacity.sqltoy.config.annotation.Entity;
 import org.sagacity.sqltoy.config.annotation.Id;
 import org.sagacity.sqltoy.config.annotation.OneToMany;
 
-import com.sqltoy.quickstart.vo.ComplexpkItemVO;
-
 /**
  * @project sqltoy-quickstart
  * @version 1.0.0
- * Table: sqltoy_complexpk_head,Remark:复合主键级联操作主表  
+ * Table: SQLTOY_COMPLEXPK_HEAD,Remark:复合主键级联操作主表  
  */
-@Entity(tableName="sqltoy_complexpk_head",pk_constraint="PRIMARY")
+@Entity(tableName = "SQLTOY_COMPLEXPK_HEAD", pk_constraint = "PRIMARY")
 public abstract class AbstractComplexpkHeadVO implements Serializable {
 	
 	/**
@@ -93,7 +91,9 @@ public abstract class AbstractComplexpkHeadVO implements Serializable {
 	/**
 	 * 主键关联子表信息
 	 */
-	@OneToMany(fields={"transDate","transCode"},mappedTable="sqltoy_complexpk_item",mappedColumns={"TRANS_DATE","TRANS_ID"},mappedFields={"transDate","transId"})
+  @OneToMany(fields = {"transDate",
+      "transCode"}, mappedTable = "SQLTOY_COMPLEXPK_ITEM", mappedColumns = {"TRANS_DATE",
+      "TRANS_ID"}, mappedFields = {"transDate", "transId"})
 	protected List<ComplexpkItemVO> complexpkItemVOs=new ArrayList<ComplexpkItemVO>();
 
 	/** default constructor */
